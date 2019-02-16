@@ -1,0 +1,66 @@
+<template>
+    <button>INICIAR</button>
+    <button>BOOSTRAP</button>
+    <button>ANGULAR</button>
+</template>
+
+<template>
+        <div class="panel panel-${type}">
+            <div class="panel-heading">
+                <h3 class="panel-title">${title}</h3>
+            </div>
+            <div class="panel-body">
+                ${body}
+            </div>
+        </div>
+    
+    </template>
+<template>
+        <div class="panel panel-${type}">
+            <div class="panel-heading">
+                <h3 class="panel-title">${title}</h3>
+            </div>
+            <div class="panel-body">
+                ${body}
+            </div>
+        </div>
+    </template>
+<template>
+     
+        <require from="./elements/custompanel"></require>
+        <require from="bootstrap/css/bootstrap.css"></require>
+     
+        <custom-panel class="col-lg-4"
+                      type.bind="'default'"
+                      title.bind="'Panel Default'"
+                      body.bind="'Body default'">
+        </custom-panel>
+        <custom-panel class="col-lg-4"
+                      type.bind="'primary'"
+                      title.bind="'Panel Primary'"
+                      body.bind="'Body danger'">
+        </custom-panel>
+        <custom-panel class="col-lg-4"
+                      type.bind="'info'"
+                      title.bind="'Panel Info'"
+                      body.bind="'Body Info'">
+        </custom-panel>
+     
+    </template>
+<div class="col-md-9 col-md-offset-3">
+    <div class="form-group row">
+        <div class="col-md-3">
+            <input type="text" class="form-control" ref="type" placeholder="Type">
+        </div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" ref="title" placeholder="Value">
+        </div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" ref="body" placeholder="Body">
+        </div>
+    </div>
+</div>
+</div>
+
+<custom-panel class="col-lg-6 col-lg-offset-3" type.bind="type.value" title.bind="title.value" body.bind="body.value">
+</custom-panel>
